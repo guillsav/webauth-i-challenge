@@ -4,7 +4,9 @@
   "description": "## Topics",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon index.js"
+    "server": "nodemon index.js",
+    "latest": "npx knex migrate:latest",
+    "rollback": "npx knex migrate:rollback"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,7 @@
   "homepage": "https://github.com/guillsav/webauth-i-challenge#readme",
   "dependencies": {
     "bcrypt": "^3.0.6",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "helmet": "^3.18.0",
     "knex": "^0.16.5",
