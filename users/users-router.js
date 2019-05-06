@@ -15,7 +15,7 @@ router.get('/', checkHeadersPassword, async (req, res) => {
 
 router.get('/:id', checkHeadersPassword, async (req, res) => {
   try {
-    const user = await db.getUser(req.params.id);
+    const user = await db.getUserById(req.params.id);
     if (user) {
       res.status(200).json(user);
     } else {

@@ -6,7 +6,7 @@ const checkRequired = require('../middlewares/checkRequired.js');
 router.post('/', checkRequired, async (req, res) => {
   try {
     const {username, password} = req.body;
-    const foundUser = await db.getUser(username);
+    const foundUser = await db.getUserByUsername(username);
     if (foundUser) {
       const checkPass = bcrypt.compareSync(password, foundUser.password);
       if (checkPass) {

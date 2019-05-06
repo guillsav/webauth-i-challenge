@@ -4,7 +4,7 @@ const db = require('../users/users-model.js');
 function checkHeaderPassword(req, res, next) {
   const {username, password} = req.headers;
   const founduser = db
-    .getUser(username)
+    .getUserByUsername(username)
     .then(user => {
       if (user && bcrypt.compareSync(password, user.password)) {
         next();
