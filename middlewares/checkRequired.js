@@ -1,6 +1,6 @@
 function checkRequired(req, res, next) {
   const {username, password} = req.body;
-  if (username.length > 0 && password.length > 0) {
+  if (req.body.username.length > 0 && req.body.password.length > 0) {
     next();
   } else {
     res
